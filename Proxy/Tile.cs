@@ -13,13 +13,19 @@ namespace Proxy
     {
         protected Texture2D texture;
         private Rectangle position;
+        protected string name;
+        protected string terrainType;
         public Tile()
         {
             texture = Assets.GetTexture2D("banner");
+            terrainType = "tile";
+            name = "tile";
         }
         public Tile(Texture2D texture)
         {
             this.texture = texture;
+            terrainType = "tile";
+            name = "tile";
         }
         public void draw(SpriteBatch spriteBatch)
         {
@@ -29,5 +35,14 @@ namespace Proxy
         {
             position = drawPosition;
         }
+        public string getTerrainType()
+        {
+            return terrainType;
+        }
+        public bool containsPoint(Point point)
+        {
+            return position.Contains(point);
+        }
+        public string getName() { return name; }
     }
 }

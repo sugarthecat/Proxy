@@ -12,15 +12,15 @@ namespace Proxy
     {
         public SettingsGUI()
         {
-            addGuiElement(new GUIElement(Assets.GetTexture2D("banner"),
+            AddGuiElement(new GUIElement(Assets.GetTexture2D("banner"),
               new Microsoft.Xna.Framework.Rectangle(300, 50, 600,300)));
-            addGuiElement(new Button("return",
+            AddGuiElement(new Button("return",
               new Microsoft.Xna.Framework.Rectangle(500, 400, 200, 100),
-              delegate { Game1.instance.toggleSettings(); }));
+              delegate { Game1.instance.ToggleSettings(); }));
 
-            addGuiElement(new Button("toggle-fullscreen",
-              new Microsoft.Xna.Framework.Rectangle(500, 500, 200, 100),
-              delegate { Game1.instance.toggleFullscreen(); }));
+            AddGuiElement(new Button("toggle-fullscreen",
+              new Microsoft.Xna.Framework.Rectangle(500, 550, 200, 100),
+              delegate { Game1.instance.ToggleFullscreen(); }));
         }
     }
 }

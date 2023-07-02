@@ -44,7 +44,7 @@ namespace Proxy
             textureHover = baseTexture;
             activationAction = actionOnActivate;
         }
-        public virtual void draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             MouseState mouseState = Mouse.GetState();
             if (position.Contains(mouseState.X,mouseState.Y))
@@ -56,11 +56,13 @@ namespace Proxy
                 spriteBatch.Draw(texture, position, Color.White);
             }
         }
-        public void handleClick(Point mousePoint) {
+        public bool HandleClick(Point mousePoint) {
             if (position.Contains(mousePoint))
             {
                 activationAction();
+                return true;
             }
+            return false;
         }
     }
 }

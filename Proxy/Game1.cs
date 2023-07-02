@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace Proxy
@@ -18,8 +19,9 @@ namespace Proxy
         private GUI worldGUI;
         private GUI mainMenuGUI;
         private GUI settingsGUI;
-        private bool mouseDown;
+        private MouseState previousMouseState;
         private bool settingsActive;
+        private bool windowActive;
         public Game1()
         {
             instance = this;
@@ -29,22 +31,35 @@ namespace Proxy
             //_graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            windowActive = false;
             settingsActive = false;
-            mouseDown = false;
+            previousMouseState = Mouse.GetState();
+            this.Activated += windowOpened;
+            this.Deactivated += windwoClosed;
         }
-        public int getScreenWidth()
+        public void windowOpened(object sendet, EventArgs args)
+        {
+            windowActive = true;
+        }
+
+        public void windwoClosed(object sendet, EventArgs args)
+        {
+            windowActive = false;
+        }
+
+        public int GetScreenWidth()
         {
             return _graphics.PreferredBackBufferWidth;
         }
-        public int getScreenHeight()
+        public int GetScreenHeight()
         {
             return _graphics.PreferredBackBufferHeight;
         }
-        public void toggleSettings()
+        public void ToggleSettings()
         {
             settingsActive = !settingsActive;
         }
-        public void toggleFullscreen()
+        public void ToggleFullscreen()
         {
             _graphics.ToggleFullScreen();
         }
@@ -67,7 +82,7 @@ namespace Proxy
             currentGUI = mainMenuGUI;
             settingsGUI = new SettingsGUI();
             worldGUI = new WorldGUI();
-            World.generateWorld();
+            World.GenerateWorld();
         }
         protected override void LoadContent()
         {
@@ -79,40 +94,49 @@ namespace Proxy
         protected override void Update(GameTime gameTime)
         {
             MouseState mouseState = Mouse.GetState();
-            if (!mouseDown && mouseState.LeftButton == ButtonState.Pressed)
+            if (windowActive)
             {
-                if (settingsActive)
+                if (previousMouseState.LeftButton != ButtonState.Pressed && mouseState.LeftButton == ButtonState.Pressed)
                 {
-                    settingsGUI.handleClick(new Point(mouseState.X, mouseState.Y));
+                    if (settingsActive)
+                    {
+                        settingsGUI.HandleClick(new Point(mouseState.X, mouseState.Y));
+                    }
+                    else
+                    {
+                        currentGUI.HandleClick(new Point(mouseState.X, mouseState.Y));
+                    }
                 }
-                else
+                if (currentGUI == worldGUI)
                 {
-                    currentGUI.handleClick(new Point(mouseState.X, mouseState.Y));
+                    if (previousMouseState.RightButton == ButtonState.Pressed && mouseState.RightButton == ButtonState.Pressed)
+                    {
+                        World.Move(mouseState.X - previousMouseState.X, mouseState.Y - previousMouseState.Y);
+                    }
 
+                    World.Scale(mouseState.ScrollWheelValue - previousMouseState.ScrollWheelValue);
                 }
             }
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
 
             // TODO: Add your update logic here
 
-            mouseDown = mouseState.LeftButton == ButtonState.Pressed;
+            previousMouseState = mouseState;
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
-        { 
+        {
             GraphicsDevice.Clear(Color.Black);
             _spriteBatch.Begin();
-            if(settingsActive)
+            if (settingsActive)
             {
-                settingsGUI.draw(_spriteBatch);
+                settingsGUI.Draw(_spriteBatch);
             }
             else
             {
-                currentGUI.draw(_spriteBatch);
+                currentGUI.Draw(_spriteBatch);
             }
-            _spriteBatch.End(); 
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }

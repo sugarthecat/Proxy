@@ -11,31 +11,35 @@ namespace Proxy
 {
     public class GUI
     {
-        private List<GUIElement> elements;
+        protected List<GUIElement> elements;
         public GUI() { 
             elements = new List<GUIElement>();
         }
-        public void addGuiElement(GUIElement element)
+        public void AddGuiElement(GUIElement element)
         {
             elements.Add(element);
         }
-        public void removeElement(GUIElement element)
+        public void RemoveGuiElement(GUIElement element)
         {
             elements.Remove(element);
         }
-        public GUIElement getElement(int index) { 
+        public GUIElement GetElement(int index) { 
             return elements[index];
         }
-        public virtual void draw(SpriteBatch spriteBatch)
+        public void RemoveAllGuiElements()
+        {
+            elements.Clear();
+        }
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             for (int i = 0; i < elements.Count; i++)
             {
-                elements[i].draw(spriteBatch);
+                elements[i].Draw(spriteBatch);
             }
         }
-        public void handleClick(Point clickPoint) { 
+        public virtual void HandleClick(Point clickPoint) { 
             for(int i = 0; i< elements.Count; i++) {
-                elements[i].handleClick(clickPoint);
+                elements[i].HandleClick(clickPoint);
             }
         }
     }

@@ -12,28 +12,28 @@ namespace Proxy
     {
         public MainMenuGUI()
         {
-            addGuiElement(new GUIElement(Assets.GetTexture2D("banner"),
+            AddGuiElement(new GUIElement(Assets.GetTexture2D("banner"),
               new Microsoft.Xna.Framework.Rectangle(200, 50,800, 400)));
 
-            addGuiElement(new Button(
+            AddGuiElement(new Button(
                     "load",
-                    new Microsoft.Xna.Framework.Rectangle(600, 500, 300, 150)));
+                    new Microsoft.Xna.Framework.Rectangle(610, 500, 300, 150)));
 
-            addGuiElement(new Button(
+            AddGuiElement(new Button(
                     "new-game",
-                    new Microsoft.Xna.Framework.Rectangle(300, 500, 300, 150),
+                    new Microsoft.Xna.Framework.Rectangle(290, 500, 300, 150),
                     delegate { Game1.instance.NavigateToMenu("world"); }));
 
 
-            addGuiElement(new Button(
+            AddGuiElement(new Button(
                     "exit",
-              new Microsoft.Xna.Framework.Rectangle(500, 800, 200, 100),
+              new Microsoft.Xna.Framework.Rectangle(500, 790, 200, 100),
               delegate { Game1.instance.Exit(); }));
 
-            addGuiElement(new Button(
+            AddGuiElement(new Button(
                     "settings",
-              new Microsoft.Xna.Framework.Rectangle(500, 700, 200, 100),
-              delegate { Game1.instance.toggleSettings(); }));
+              new Microsoft.Xna.Framework.Rectangle(500, 680, 200, 100),
+              delegate { Game1.instance.ToggleSettings(); }));
         }
     }
 }

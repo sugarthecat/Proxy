@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Proxy;
 using System.Collections.Generic;
 
 namespace GameProject
@@ -8,7 +9,7 @@ namespace GameProject
     {
         public static Dictionary<string,Texture2D> textures;
         private static ContentManager content;
-
+        private static Font pixelFont;
         public static void Setup(ContentManager contentManager)
         {
             content = contentManager;
@@ -29,6 +30,8 @@ namespace GameProject
             textures.Add("tundra", content.Load<Texture2D>("assets/tiles/tundra"));
             textures.Add("desert", content.Load<Texture2D>("assets/tiles/desert"));
             textures.Add("mountains", content.Load<Texture2D>("assets/tiles/mountains"));
+            textures.Add("background", content.Load<Texture2D>("assets/gui/background"));
+            pixelFont = new Font("assets/fonts/pixel",content);
             loadButton("play");
             loadButton("exit");
             loadButton("load");
@@ -36,6 +39,10 @@ namespace GameProject
             loadButton("toggle-fullscreen");
             loadButton("settings");
             loadButton("return");
+        }
+        public static Font getFont()
+        {
+            return pixelFont;
         }
         public static void loadButton(string buttonName)
         {

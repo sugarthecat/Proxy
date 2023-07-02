@@ -20,7 +20,7 @@ namespace Proxy.GUI_Element_Types
         {
 
         }
-        public override void draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             MouseState mouseState = Mouse.GetState();
             if (position.Contains(mouseState.X, mouseState.Y))
