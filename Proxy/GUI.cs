@@ -12,7 +12,8 @@ namespace Proxy
     public class GUI
     {
         protected List<GUIElement> elements;
-        public GUI() { 
+        public GUI()
+        {
             elements = new List<GUIElement>();
         }
         public void AddGuiElement(GUIElement element)
@@ -23,7 +24,8 @@ namespace Proxy
         {
             elements.Remove(element);
         }
-        public GUIElement GetElement(int index) { 
+        public GUIElement GetElement(int index)
+        {
             return elements[index];
         }
         public void RemoveAllGuiElements()
@@ -37,10 +39,17 @@ namespace Proxy
                 elements[i].Draw(spriteBatch);
             }
         }
-        public virtual void HandleClick(Point clickPoint) { 
-            for(int i = 0; i< elements.Count; i++) {
-                elements[i].HandleClick(clickPoint);
+        public virtual bool HandleClick(Point clickPoint)
+        {
+            bool activated = false;
+            for (int i = 0; i < elements.Count; i++)
+            {
+                if (elements[i].HandleClick(clickPoint))
+                {
+                    activated = true;
+                };
             }
+            return activated;
         }
     }
 }

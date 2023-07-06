@@ -49,6 +49,18 @@
 /processorParam:TextureFormat=Color
 /build:assets/fonts/pixel/0.png
 
+#begin assets/fonts/pixel/0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/0.png
+
 #begin assets/fonts/pixel/1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -60,6 +72,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:assets/fonts/pixel/1.png
+
+#begin assets/fonts/pixel/1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/1.png
+
+#begin assets/fonts/pixel/2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/2.png
 
 #begin assets/fonts/pixel/2.png
 /importer:TextureImporter
@@ -85,6 +121,18 @@
 /processorParam:TextureFormat=Color
 /build:assets/fonts/pixel/3.png
 
+#begin assets/fonts/pixel/3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/3.png
+
 #begin assets/fonts/pixel/4.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -96,6 +144,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:assets/fonts/pixel/4.png
+
+#begin assets/fonts/pixel/4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/4.png
+
+#begin assets/fonts/pixel/5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/5.png
 
 #begin assets/fonts/pixel/5.png
 /importer:TextureImporter
@@ -121,6 +193,30 @@
 /processorParam:TextureFormat=Color
 /build:assets/fonts/pixel/6.png
 
+#begin assets/fonts/pixel/6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/6.png
+
+#begin assets/fonts/pixel/7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/7.png
+
 #begin assets/fonts/pixel/7.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -144,6 +240,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:assets/fonts/pixel/8.png
+
+#begin assets/fonts/pixel/8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/8.png
+
+#begin assets/fonts/pixel/9.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/fonts/pixel/9.png
 
 #begin assets/fonts/pixel/9.png
 /importer:TextureImporter
@@ -877,6 +997,18 @@
 /processorParam:TextureFormat=Color
 /build:assets/GUI/button-template.png
 
+#begin assets/GUI/country-button.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/GUI/country-button.png
+
 #begin assets/GUI/exit-button.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -997,6 +1129,30 @@
 /processorParam:TextureFormat=Color
 /build:assets/GUI/return-button.png
 
+#begin assets/GUI/selected-tile-overlay.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/GUI/selected-tile-overlay.png
+
+#begin assets/GUI/selected-tile-overlay.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/GUI/selected-tile-overlay.png
+
 #begin assets/GUI/settings-button.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1044,6 +1200,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:assets/GUI/toggle-fullscreen-button.png
+
+#begin assets/GUI/x-button.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/GUI/x-button.png
+
+#begin assets/GUI/x-button.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/GUI/x-button.png
 
 #begin assets/icon.png
 /importer:TextureImporter
@@ -1116,6 +1296,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:assets/social-democracy.png
+
+#begin assets/solid-white-block.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/solid-white-block.png
+
+#begin assets/solid-white-block.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:assets/solid-white-block.png
 
 #begin assets/tiles/brushland.png
 /importer:TextureImporter

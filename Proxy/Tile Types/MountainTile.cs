@@ -1,4 +1,5 @@
 ﻿using GameProject;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Proxy.Tile_Types
 {
     internal class MountainTile : LandTile
     {
-        public MountainTile() : base(Assets.GetTexture2D("mountains"))
+        public MountainTile(Point position) : base(Assets.GetTexture2D("mountains"), position)
         {
             terrainType = "mountain";
         }

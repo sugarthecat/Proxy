@@ -16,29 +16,52 @@ namespace Proxy
     internal class WorldGUI : GUI
     {
         private Tile selectedTile;
-        private GUI tileGUI;
+        private GUI subGUI;
         public WorldGUI()
         {
 
         }
+        public void ClearSubGui()
+        {
+            subGUI = null;
+            selectedTile = null;
+        }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            Font f = Assets.getFont();
-            World.draw(spriteBatch);
-            if(tileGUI != null)
+            if(selectedTile == null)
             {
-                tileGUI.Draw(spriteBatch);
+                World.Draw(spriteBatch);
+            }
+            else
+            {
+                World.Draw(spriteBatch, selectedTile);
+            }
+            if(subGUI != null)
+            {
+                subGUI.Draw(spriteBatch);
             }
             base.Draw(spriteBatch);
         }
-        public override void HandleClick(Point clickPoint)
+        public void setSubGUI(GUI subgui)
+        {
+            this.subGUI = subgui;
+        }
+
+        public override bool HandleClick(Point clickPoint)
         {   
             
             for (int i = 0; i < elements.Count; i++)
             {
                 if (elements[i].HandleClick(clickPoint))
                 {
-                    return;
+                    return true;
+                }
+            }
+            if(subGUI != null)
+            {
+                if (subGUI.HandleClick(clickPoint))
+                {
+                    return true;
                 }
             }
             selectedTile = World.getTileAtPosition(clickPoint);
@@ -47,13 +70,15 @@ namespace Proxy
             {
                 if(selectedTile is LandTile)
                 {
-                    tileGUI = new TileGUI(selectedTile);
+                    subGUI = new TileGUI((LandTile)selectedTile,this);
+                    return true;
                 }
                 else
                 {
-                    tileGUI = null;
+                    subGUI = null;
                 }
             }
+            return false;
         }
     }
 }

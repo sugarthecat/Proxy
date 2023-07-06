@@ -1,5 +1,5 @@
 ﻿using GameProject;
-using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Proxy.Tile_Types
 {
     internal class TaigaTile : LandTile
     {
-        public TaigaTile() : base(Assets.GetTexture2D("taiga"))
+        public TaigaTile(Point position) : base(Assets.GetTexture2D("taiga"), position)
         {
             terrainType = "taiga";
         }

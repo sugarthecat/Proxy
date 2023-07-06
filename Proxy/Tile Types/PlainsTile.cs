@@ -1,4 +1,5 @@
 ﻿using GameProject;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Proxy.Tile_Types
 {
     internal class PlainsTile : LandTile
     {
-        public PlainsTile() : base(Assets.GetTexture2D("plains"))
+        public PlainsTile(Point position) : base(Assets.GetTexture2D("plains"), position)
         {
             terrainType = "grasslands";
         }

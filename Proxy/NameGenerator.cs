@@ -20,7 +20,7 @@ namespace Proxy
                 this.commonality = commonality;
             }
         };
-        private static Dictionary<string, Tile> nameDictionary = new Dictionary<string, Tile>();
+        private static List<string> takenNames = new List<string>();
         private static Random random = new Random();
         private static string generateName()
         {
@@ -120,12 +120,26 @@ namespace Proxy
         public static string getNewName(Tile tile)
         {
             string name = null;
-            for(int i = 0; i<100; i++)
+            for (int i = 0; i < 100; i++)
             {
                 name = generateName();
-                if (!nameDictionary.ContainsKey(name))
+                if (!takenNames.Contains(name))
                 {
-                    nameDictionary[name] = tile;
+                    takenNames.Add(name);
+                    return name;
+                }
+            }
+            return name;
+        }
+        public static string getNewName()
+        {
+            string name = null;
+            for (int i = 0; i < 100; i++)
+            {
+                name = generateName();
+                if (!takenNames.Contains(name))
+                {
+                    takenNames.Add(name);
                     return name;
                 }
             }

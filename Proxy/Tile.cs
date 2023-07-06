@@ -15,25 +15,34 @@ namespace Proxy
         private Rectangle position;
         protected string name;
         protected string terrainType;
-        public Tile()
-        {
-            texture = Assets.GetTexture2D("banner");
-            terrainType = "tile";
-            name = "tile";
-        }
-        public Tile(Texture2D texture)
+        private Point mapPosition;
+        protected Tile[] borderingTiles;
+        public Tile(Texture2D texture, Point mapPosition)
         {
             this.texture = texture;
             terrainType = "tile";
             name = "tile";
+            this.mapPosition = mapPosition;
         }
-        public void draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, position, Color.White);
         }
         public void setPosition(Rectangle drawPosition)
         {
             position = drawPosition;
+        }
+        public void setBorderingTiles(Tile[] borderingTiles)
+        {
+            this.borderingTiles = borderingTiles;
+        }
+        public Rectangle getPosition()
+        {
+            return position;
+        }
+        public Point getPointPosition()
+        {
+            return mapPosition;
         }
         public string getTerrainType()
         {

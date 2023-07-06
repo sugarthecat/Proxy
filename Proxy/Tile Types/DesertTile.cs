@@ -1,5 +1,6 @@
 ﻿using GameProject;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Proxy.Tile_Types
 {
     internal class DesertTile : LandTile
     {
-        public DesertTile() : base(Assets.GetTexture2D("desert"))
+        public DesertTile(Point position) : base(Assets.GetTexture2D("desert"), position)
         {
             terrainType = "desert";
         }

@@ -1,5 +1,5 @@
 ﻿using GameProject;
-using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Proxy.Tile_Types
 {
     internal class BrushTile : LandTile
     {
-        public BrushTile() : base(Assets.GetTexture2D("brushland"))
+        public BrushTile(Point position) : base(Assets.GetTexture2D("brushland"), position)
         {
             terrainType = "brushland";
         }

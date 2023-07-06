@@ -21,16 +21,18 @@ namespace GameProject
         {
             textures.Add("banner", content.Load<Texture2D>("assets/gui/banner"));
 
-            textures.Add("brushland", content.Load<Texture2D>("assets/tiles/brushland"));
-            textures.Add("jungle", content.Load<Texture2D>("assets/tiles/jungle"));
-            textures.Add("plains", content.Load<Texture2D>("assets/tiles/plains"));
-            textures.Add("taiga", content.Load<Texture2D>("assets/tiles/taiga"));
-            textures.Add("water", content.Load<Texture2D>("assets/tiles/water"));
-            textures.Add("forest", content.Load<Texture2D>("assets/tiles/forest"));
-            textures.Add("tundra", content.Load<Texture2D>("assets/tiles/tundra"));
-            textures.Add("desert", content.Load<Texture2D>("assets/tiles/desert"));
-            textures.Add("mountains", content.Load<Texture2D>("assets/tiles/mountains"));
+            loadTile("brushland");
+            loadTile("jungle");
+            loadTile("plains");
+            loadTile("water");
+            loadTile("taiga");
+            loadTile("desert");
+            loadTile("forest");
+            loadTile("tundra");
+            loadTile("mountains");
             textures.Add("background", content.Load<Texture2D>("assets/gui/background"));
+            textures.Add("selected-tile-overlay", content.Load<Texture2D>("assets/gui/selected-tile-overlay"));
+            textures.Add("rect", content.Load<Texture2D>("assets/solid-white-block"));
             pixelFont = new Font("assets/fonts/pixel",content);
             loadButton("play");
             loadButton("exit");
@@ -39,6 +41,8 @@ namespace GameProject
             loadButton("toggle-fullscreen");
             loadButton("settings");
             loadButton("return");
+            loadButton("x");
+            loadButton("country");
         }
         public static Font getFont()
         {
@@ -47,6 +51,10 @@ namespace GameProject
         public static void loadButton(string buttonName)
         {
             textures.Add(buttonName + "-button", content.Load<Texture2D>("assets/gui/" + buttonName + "-button"));
+        }
+        public static void loadTile(string tileName)
+        {
+            textures.Add(tileName, content.Load<Texture2D>("assets/tiles/" + tileName));
         }
         public static Texture2D GetTexture2D(string name)
         {

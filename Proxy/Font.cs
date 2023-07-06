@@ -37,25 +37,25 @@ namespace Proxy
         public void DrawText(SpriteBatch spriteBatch, string textToDisplay, Rectangle textArea)
         {
 
-            int newWidth = textArea.Width;
-            int newHeight = textArea.Height;
+            int width = textArea.Width;
+            int height = textArea.Height;
             int xOffset = 0;
             int yOffset = 0;
 
 
-    
-            if (newWidth * 100 * textToDisplay.Length < newHeight * 64)
+            int theoreticNewWidth = (int)(64d * textToDisplay.Length*height/100d);
+            int theoreticNewHeight = (int)(100d*width/textToDisplay.Length/64d);
+            if (theoreticNewWidth<width)
             {
-                newWidth = (int)(newHeight / 100d * 64d * textToDisplay.Length);
-                xOffset = (textArea.Width - newWidth) / 2;
+                width = theoreticNewWidth;
+                xOffset = (textArea.Width - width) / 2;
             }
-            else if (newWidth * 100 * textToDisplay.Length > newHeight * 64)
+            else if (theoreticNewHeight < height)
             {
-                newHeight = (int)(newWidth * 100d / 64d / textToDisplay.Length);
-                yOffset = (textArea.Height - newHeight) / 2;
+                height = theoreticNewHeight;
+                yOffset = (textArea.Height - height) / 2;
             }
-
-            Rectangle displayArea = new Rectangle(textArea.X + xOffset, textArea.Y + yOffset, newWidth, newHeight);
+            Rectangle displayArea = new Rectangle(textArea.X + xOffset, textArea.Y + yOffset, width, height);
 
             
             for (int i = 0; i < textToDisplay.Length; i++)
