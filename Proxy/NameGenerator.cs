@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Proxy
 {
     internal static class NameGenerator
     {
-
         private struct itemCommonalityPair
         {
             public string item;
             public int commonality;
+
             public itemCommonalityPair(string name, int commonality)
             {
                 this.item = name;
                 this.commonality = commonality;
             }
         };
+
         private static List<string> takenNames = new List<string>();
         private static Random random = new Random();
+
         private static string generateName()
         {
             itemCommonalityPair[] startConsonant = {
@@ -52,7 +50,7 @@ namespace Proxy
                 new itemCommonalityPair("tr", 1),
                 new itemCommonalityPair("ch", 1),
                 new itemCommonalityPair("gl", 1),
-            }; 
+            };
             itemCommonalityPair[] nonStartConsonant = {
                 new itemCommonalityPair("b", 5),
                 new itemCommonalityPair("c", 1),
@@ -91,25 +89,23 @@ namespace Proxy
                 new itemCommonalityPair("ue", 1),
             };
             string name = getItemWeighted(startConsonant) + getItemWeighted(vowel) + getItemWeighted(nonStartConsonant) + getItemWeighted(vowel) + getItemWeighted(nonStartConsonant);
-            string[] nameAdditionTemplates = { 
-            
-            };
 
+            name = name[0].ToString().ToUpper() + name.Substring(1);
             return name;
-
         }
+
         private static string getItemWeighted(itemCommonalityPair[] pairs)
         {
             int total = 0;
-            for(int i = 0; i < pairs.Length; i++)
+            for (int i = 0; i < pairs.Length; i++)
             {
                 total += pairs[i].commonality;
             }
             int item = random.Next(0, total);
             total = 0;
-            for(int i =0; i<pairs.Length; i++)
+            for (int i = 0; i < pairs.Length; i++)
             {
-                if(item < total + pairs[i].commonality)
+                if (item < total + pairs[i].commonality)
                 {
                     return pairs[i].item;
                 }
@@ -117,6 +113,7 @@ namespace Proxy
             }
             return pairs[0].item;
         }
+
         public static string getNewName(Tile tile)
         {
             string name = null;
@@ -131,6 +128,7 @@ namespace Proxy
             }
             return name;
         }
+
         public static string getNewName()
         {
             string name = null;

@@ -1,13 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
+﻿using GameProject;
 using Microsoft.Xna.Framework;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-using GameProject;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Proxy.Tile_Types
 {
@@ -16,15 +9,31 @@ namespace Proxy.Tile_Types
         private Country country;
         protected int grainProduction;
         protected int population;
+        protected ResourceCount resourceCount;
+        protected Culture[] cultures;
+
         public LandTile(Texture2D tile, Point position) : base(tile, position)
         {
+            resourceCount = new ResourceCount();
             generateName();
         }
+
+        public void setResourceCount(ResourceCount resources)
+        {
+            resourceCount = resources;
+        }
+
+        public ResourceCount getResourceCount()
+        { return resourceCount; }
+
         public void setPopulation(int population)
         {
             this.population = population;
         }
-        public int getPopulation() { return this.population; }
+
+        public int getPopulation()
+        { return this.population; }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
@@ -37,6 +46,7 @@ namespace Proxy.Tile_Types
                 spriteBatch.Draw(Assets.GetTexture2D("rect"), getPosition(), getCountry().GetColor());
             }
         }
+
         protected bool isBorderingEnemy()
         {
             for (int i = 0; i < borderingTiles.Length; i++)
@@ -48,32 +58,37 @@ namespace Proxy.Tile_Types
             }
             return false;
         }
+
         private void generateName()
         {
             //Algorithm generates base as consonant-vowel-consonant-vowel-consonant where any of them can be pairs
             // think l/o/nd/o/n, m/o/sc/o/w, p/a/r/i/s, b/e/rl/i/n
             name = NameGenerator.getNewName(this);
         }
+
         public Country getCountry()
         {
             return country;
         }
+
         public bool isCapital()
         {
             return (country.GetCapital() == this);
         }
+
         public void setCountry(Country country)
         {
-            if(this.country == country) return;
-            if(this.country != null) {
+            if (this.country == country) return;
+            if (this.country != null)
+            {
                 this.country.RemoveTile(this);
             }
             this.country = country;
             country.AddTile(this);
         }
+
         public void drawCountry()
         {
-
         }
     }
 }
